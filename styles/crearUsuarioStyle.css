@@ -1,0 +1,9 @@
+#formularioOculto {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    #logoCrearUsuario {
+        display: none !important;
+    }
+}

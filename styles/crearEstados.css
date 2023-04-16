@@ -1,0 +1,21 @@
+#formularioEstados {
+  display: none;
+}
+
+#datosExcel {
+  display: none;
+}
+
+#ano {
+  display: none;
+}
+
+#mensajeFormulario {
+  z-index: 99;
+  position: fixed;
+  top: 2%;
+}
+
+#informacionExcel {
+  display: none;
+}

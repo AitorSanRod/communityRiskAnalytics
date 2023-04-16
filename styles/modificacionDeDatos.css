@@ -1,0 +1,10 @@
+#inputSeleccionSector {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #contenedorPrincipal {
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
