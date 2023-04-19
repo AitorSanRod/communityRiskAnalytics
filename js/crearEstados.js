@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let divInformacionExcel = document.getElementById('informacionExcel');
   let comentarioExcel = document.getElementById('comentarioExcel');
   let botonEnvioDatosConExcel = document.getElementById('enviarDatosExcel');
+  let datosPlantilla = document.getElementById('informacionPlantilla');
   //comentario
   let inputComentario = document.getElementById('comentario');
   let controlComentario = document.getElementById('controlComentario');
@@ -210,18 +211,21 @@ document.addEventListener('DOMContentLoaded', function () {
       formularioManual.style.display = 'block';
       datosExcel.style.display = 'none';
       divInformacionExcel.style.display = 'none';
+      datosPlantilla.style.display = 'none';
       resetFormulario();
 
     } else if (tipoDeSubida.value == 'excel') { //Mostrar datos excel
       formularioManual.style.display = 'none';
       datosExcel.style.display = 'block';
       divInformacionExcel.style.display = 'block';
+      datosPlantilla.style.display = 'block';
       resetFormulario();
 
     } else { // Dejar la sección vacia
       formularioManual.style.display = 'none';
       datosExcel.style.display = 'none';
       divInformacionExcel.style.display = 'none';
+      datosPlantilla.style.display = 'none';
       resetFormulario();
 
     }

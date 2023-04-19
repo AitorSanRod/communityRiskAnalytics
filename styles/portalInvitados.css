@@ -1,3 +1,8 @@
-#formulario, #calcular {
+#formulario,
+#calcular {
     display: none;
+}
+
+#contenidoPrincipal {
+    height: 60vh;
 }
