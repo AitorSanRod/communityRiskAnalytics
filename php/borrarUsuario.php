@@ -21,7 +21,8 @@
 
     #Si se ha borrado correctamente, vaciamos la variable de session.
     if($respuestaQuery){
-        $_SESSION['idUsuario'] = '';
+        $_SESSION['usuario'] = null;
+        $_SESSION['idUsuario'] = null;
     }
 
     echo json_encode($respuestaQuery);

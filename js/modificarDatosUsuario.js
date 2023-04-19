@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  formularioEmpresa.addEventListener('submit', function (evento) {//Razón social de la empresa
+  formularioEmpresa.addEventListener('submit', function (evento) {//Datos empresa
     let datosFormulario = new FormData(formularioEmpresa);
 
     evento.preventDefault();
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  formularioCambioContrasena.addEventListener('submit', function (evento) {//TODO
+  formularioCambioContrasena.addEventListener('submit', function (evento) {//Contraseña
     let datosFormulario = new FormData(formularioCambioContrasena);
 
     evento.preventDefault();
@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', function () {
           contenedorNotificaciones.appendChild(alertaError('errorAjax', 'Error en la base de datos, contacte con el administrador.'));
           eliminarComponentePorTiempo('errorAjax', 2500);
         });
+    } else {
+      contenedorNotificaciones.appendChild(alertaError('errorAlModificar', 'Datos no válidos, no se ha podido cambiar la contraseña.'));
+      eliminarComponentePorTiempo('errorAlModificar', 1800);
     }
 
   });
@@ -141,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   inputRazonSocial.addEventListener('keyup', function () {//Input de la razón social de la empresa.
     let razonSocial = inputRazonSocial.value;
-
     razonSocial = razonSocial.trim();
 
     if (validarLongitud(razonSocial, 3, 50)) {
@@ -160,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  selectSector.addEventListener('change', function () {
+  selectSector.addEventListener('change', function () {//Selector de sector
     inputSector.value = selectSector.value;
 
     if (inputSector.value != '') {
@@ -172,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  inputNuevaContrasena.addEventListener('keyup', function () {
+  inputNuevaContrasena.addEventListener('keyup', function () {//Input de contraseña
     inputNuevaContrasena.value = inputNuevaContrasena.value.trim();
 
     if (validarLongitud(inputNuevaContrasena.value, 5, 45)) {
@@ -189,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  inputRepetirContrasena.addEventListener('keyup', function () {
+  inputRepetirContrasena.addEventListener('keyup', function () {//Input repetir contraseña
     if (inputNuevaContrasena.value.trim() === inputRepetirContrasena.value.trim()) {
       controlRepetirContrasena.innerText = '';
       contrasenaOK = true;

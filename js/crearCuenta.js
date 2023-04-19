@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
             eliminarComponente('cargaFormulario');
             formulario.style.display = 'block';
             tituloFormulario.innerText = 'Nuevo usuario';
-            alertas.appendChild(alerta('nuevoUsuario', 'Nuevo usuario creado!')); //Mensaje de creación de cuenta
+            alertas.appendChild(alerta('nuevoUsuario', '¡Nuevo usuario creado!')); //Mensaje de creación de cuenta
 
             //Reset de los inputs
             document.getElementById('usuario').value = '';
