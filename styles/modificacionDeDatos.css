@@ -2,6 +2,14 @@
     display: none;
 }
 
+.tarjetaPequena:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 9px grey;
+    transform: scale(1.005);
+    transition: box-shadow 0.2s ease-in;
+    transition: transform 0.2s ease-in;
+}
+
 @media (max-width: 768px) {
     #contenedorPrincipal {
         display: flex !important;

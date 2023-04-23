@@ -1,3 +1,7 @@
+#contenedorPrincipal {
+    min-height: 70vh;
+}
+
 @media (max-width: 992px) {
     #logoLogin {
         display: none !important;

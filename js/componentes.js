@@ -143,7 +143,7 @@ function botonParaAbrirModal(idBoton, idModal, textoBoton) {
 function tarjeta(id, encabezado, comentario, boton) {
   /*
   * Esta función devuelve una tarjeta.
-  * El boton debe ser un componente de boton.
+  * El boton debe ser un componente de botonParaAbrirModal.
   */
   let divTarjeta = document.createElement('div');
   let encabezadoTarjeta = document.createElement('div');
@@ -169,7 +169,7 @@ function tarjeta(id, encabezado, comentario, boton) {
 }
 
 function formularioInvisibleParaBorradoPorID(idDelFormulario, namePHP, valor) {
-  //Crea un formulario que ve no se y del cual no se pueden modificar los datos el input
+  //Crea un formulario que no se ve y del cual no se pueden modificar los datos el input
   let formulario = document.createElement('form');
   let input = document.createElement('input');
 
@@ -186,30 +186,42 @@ function formularioInvisibleParaBorradoPorID(idDelFormulario, namePHP, valor) {
   return formulario;
 }
 
-function tarjetaPequena(urlImagen, titulo, idModalQueAbre, textoBoton) {
+function tarjetaPequena(urlImagen, titulo, descripcion, idModalQueAbre) {
   let tarjeta = document.createElement('div');
+  let contenidoTarjeta = document.createElement('div');
+  let divImg = document.createElement('div');
   let imagenTarjeta = document.createElement('img');
-  let descripcionTarjeta = document.createElement('div');
-  let tituloTarjeta = document.createElement('h5');
-  let botonModal;
+  let divCuerpo = document.createElement('div');
+  let divContenidoCuerpo = document.createElement('div');
+  let encabezadoTarjeta = document.createElement('h5');
+  let descripcionCarta = document.createElement('p');
 
-  tarjeta.className = 'card';
-  tarjeta.style.width = '18rem';
+  tarjeta.className = 'card mb-3 tarjetaPequena p-2';
+  tarjeta.style = "max-width: 540px;";
+  tarjeta.setAttribute('data-bs-target', `#${idModalQueAbre}`);
+  tarjeta.setAttribute('data-bs-toggle', 'modal');
+
+  contenidoTarjeta.className = 'row';
+  divImg.className = 'col-md-4';
   imagenTarjeta.src = urlImagen;
-  imagenTarjeta.className = 'card-img-top p-1';
+  imagenTarjeta.className = 'img-fluid rounded-start';
+  imagenTarjeta.alt = 'iconos de la documentación de bootstrap.';
 
-  tarjeta.appendChild(imagenTarjeta);
+  divImg.appendChild(imagenTarjeta);
 
-  descripcionTarjeta.className = 'card-body d-flex flex-column justify-content-center';
-  tituloTarjeta.className = 'card-title text-center my-2';
-  tituloTarjeta.innerText = titulo;
+  divCuerpo.className = 'col-md-6';
+  divContenidoCuerpo.className = 'card-body';
+  encabezadoTarjeta.innerText = titulo;
+  descripcionCarta.innerText = descripcion;
 
-  //AGREGAR AQUI EL BOTON
-  botonModal = botonParaAbrirModal('', idModalQueAbre, textoBoton);
+  divContenidoCuerpo.appendChild(encabezadoTarjeta);
+  divContenidoCuerpo.appendChild(descripcionCarta);
+  divCuerpo.appendChild(divContenidoCuerpo);
 
-  descripcionTarjeta.appendChild(tituloTarjeta);
-  descripcionTarjeta.appendChild(botonModal);
-  tarjeta.appendChild(descripcionTarjeta);
+  contenidoTarjeta.appendChild(divImg);
+  contenidoTarjeta.appendChild(divCuerpo);
+
+  tarjeta.appendChild(contenidoTarjeta);
 
   return tarjeta;
 }

@@ -1,3 +1,7 @@
 #contenidoPrincipal {
     display: none;
 }
+
+#contenedorPrincipal{
+    min-height: 65vh;
+}

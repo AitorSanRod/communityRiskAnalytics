@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
   let formularioCambioContrasena = document.getElementById('formularioContrasena');
   let nuevoNombre = document.getElementById('nuevoNombreUsuario');
 
-  contenido.appendChild(tarjetaPequena('../media/img/usuario.png', 'Nombre de usuario', 'nombreUsuario', 'Modificar'));
-  contenido.appendChild(tarjetaPequena('../media/img/empresa.png', 'Datos de empresa', 'datosEmpresa', 'Modificar'));
-  contenido.appendChild(tarjetaPequena('../media/img/contrasena.png', 'Contraseña', 'contrasena', 'Modificar'));
+  contenido.appendChild(tarjetaPequena('../media/img/usuario.png', 'Nombre de usuario', 'Modificar el nombre del ususario de la cuenta.', 'nombreUsuario'));
+  contenido.appendChild(tarjetaPequena('../media/img/empresa.png', 'Datos de empresa', 'Modificar la razón social y el sector de su empresa.', 'datosEmpresa'));
+  contenido.appendChild(tarjetaPequena('../media/img/contrasena.png', 'Contraseña', 'Modificar la contraseña de usuario.', 'contrasena'));
 
   /*
   * LISTENERS

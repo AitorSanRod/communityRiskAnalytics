@@ -25,7 +25,7 @@
     </div>
     <!-- Secciones -->
     <div class="container d-flex justify-content-center w-100" id="notificaciones"></div>
-    <div class="container">
+    <div class="container" id="contenedorPrincipal">
         <div class="row gap-3 justify-content-center">
             <section class="col col-lg-6 col-md-12 col-sm-12 col-12 border border-2 rounded-3">
                 <h3 class="text-center my-3">Subida de estados</h3>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="comentarioExcel" class="form-label">Comentario</label>
-                        <input class="form-control" type="text" id="comentarioExcel">
+                        <input class="form-control" type="text" id="comentarioExcel" maxlength="240">
                     </div>
                     <div class="mb-3">
                         <label for="archivoExcel" class="form-label">Adjunte la plantilla cumplimentada:</label>
@@ -63,86 +63,86 @@
                         <label for="anoSelect" class="form-label">Año</label>
                         <select id="anoSelect" class="form-select">
                         </select>
-                        <input type="text" class="form-control" name="ano" id="ano">
+                        <input type="text" class="form-control" name="ano" id="ano" maxlength="4">
                     </div>
                     <div class="mb-3">
                         <label for="comentario" class="form-label">Comentario</label>
-                        <input class="form-control" type="text" id="comentario" name="comentario">
+                        <input class="form-control" type="text" id="comentario" name="comentario" maxlength="240">
                         <div class="form-text text-danger" id="controlComentario"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputActivoCorriente" class="form-label">Activo corriente</label>
-                        <input class="form-control num" type="text" id="inputActivoCorriente" name="activoCorriente">
+                        <input class="form-control num" type="text" id="inputActivoCorriente" name="activoCorriente" maxlength="11">
                         <div class="form-text text-danger" id="controlActivoCorriente"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputDeudoresComercialesYCuentasACobrar" class="form-label">Deudores comerciales y cuentas a cobrar</label>
-                        <input class="form-control num" type="text" id="inputDeudoresComercialesYCuentasACobrar" name="deudoresComercialesYCuentasACobrar">
+                        <input class="form-control num" type="text" id="inputDeudoresComercialesYCuentasACobrar" name="deudoresComercialesYCuentasACobrar" maxlength="11">
                         <div class="form-text text-danger" id="controlDeudoresComercialesYCuentasACobrar"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputInversionesEnEmpresasDeGrupoCP" class="form-label">Inversiones en empresas de grupo CP</label>
-                        <input class="form-control num" type="text" id="inputInversionesEnEmpresasDeGrupoCP" name="inversionesEnEmpresasDeGrupoCP">
+                        <input class="form-control num" type="text" id="inputInversionesEnEmpresasDeGrupoCP" name="inversionesEnEmpresasDeGrupoCP" maxlength="11">
                         <div class="form-text text-danger" id="controlInversionesEnEmpresasDeGrupoCP"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputInversionesFinancierasCP" class="form-label">Inversiones financieras CP</label>
-                        <input class="form-control" type="text" id="inputInversionesFinancierasCP" name="inversionesFinancierasCP">
+                        <input class="form-control" type="text" id="inputInversionesFinancierasCP" name="inversionesFinancierasCP" maxlength="11">
                         <div class="form-text text-danger" id="controlInversionesFinancierasCP"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputEfectivoYActivosLiquidos" class="form-label">Efectivo y activos líquidos</label>
-                        <input class="form-control" type="text" id="inputEfectivoYActivosLiquidos" name="efectivoYActivosLiquidos">
+                        <input class="form-control" type="text" id="inputEfectivoYActivosLiquidos" name="efectivoYActivosLiquidos" maxlength="11">
                         <div class="form-text text-danger" id="controlEfectivoYActivosLiquidos"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputActivoTotal" class="form-label">Activo total</label>
-                        <input class="form-control" type="text" id="inputActivoTotal" name="activoTotal">
+                        <input class="form-control" type="text" id="inputActivoTotal" name="activoTotal" maxlength="11">
                         <div class="form-text text-danger" id="controlActivoTotal"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputPatrimonio" class="form-label">Patrimonio</label>
-                        <input class="form-control" type="text" id="inputPatrimonio" name="patrimonio">
+                        <input class="form-control" type="text" id="inputPatrimonio" name="patrimonio" maxlength="11">
                         <div class="form-text text-danger" id="controlPatrimonio"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputFondosPropios" class="form-label">Fondos propios</label>
-                        <input class="form-control" type="text" id="inputFondosPropios" name="fondosPropios">
+                        <input class="form-control" type="text" id="inputFondosPropios" name="fondosPropios" maxlength="11">
                         <div class="form-text text-danger" id="controlFondosPropios"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputBeneficioRetenidoOReservas" class="form-label">Beneficio retenido o reservas</label>
-                        <input class="form-control" type="text" id="inputBeneficioRetenidoOReservas" name="beneficioRetenidoOReservas">
+                        <input class="form-control" type="text" id="inputBeneficioRetenidoOReservas" name="beneficioRetenidoOReservas" maxlength="11">
                         <div class="form-text text-danger" id="controlBeneficioRetenidoOReservas"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputPasivoCorrientes" class="form-label">Pasivo corriente</label>
-                        <input class="form-control" type="text" id="inputPasivoCorriente" name="pasivoCorriente">
+                        <input class="form-control" type="text" id="inputPasivoCorriente" name="pasivoCorriente" maxlength="11">
                         <div class="form-text text-danger" id="controlPasivoCorriente"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputPasivoTotal" class="form-label">Pasivo total</label>
-                        <input class="form-control" type="text" id="inputPasivoTotal" name="pasivoTotal">
+                        <input class="form-control" type="text" id="inputPasivoTotal" name="pasivoTotal" maxlength="11">
                         <div class="form-text text-danger" id="controlPasivoTotal"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputImporteNetoDeLaCifraDeNegocios" class="form-label">Importe neto de la cifra de negocios</label>
-                        <input class="form-control" type="text" id="inputImporteNetoDeLaCifraDeNegocios" name="importeNetoDeLaCifraDeNegocios">
+                        <input class="form-control" type="text" id="inputImporteNetoDeLaCifraDeNegocios" name="importeNetoDeLaCifraDeNegocios" maxlength="11">
                         <div class="form-text text-danger" id="controlImporteNetoDeLaCifraDeNegocios"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputAmortizacionDelInmovilizado" class="form-label">Amortización del inmovilizado</label>
-                        <input class="form-control" type="text" id="inputAmortizacionDelInmovilizado" name="amortizacionDelInmovilizado">
+                        <input class="form-control" type="text" id="inputAmortizacionDelInmovilizado" name="amortizacionDelInmovilizado" maxlength="11">
                         <div class="form-text text-danger" id="controlAmortizacionDelInmovilizado"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputResultadoDeExplotacion" class="form-label">Resultado de explotación</label>
-                        <input class="form-control" type="text" id="inputResultadoDeExplotacion" name="resultadoDeExplotacion">
+                        <input class="form-control" type="text" id="inputResultadoDeExplotacion" name="resultadoDeExplotacion" maxlength="11">
                         <div class="form-text text-danger" id="controlResultadoDeExplotacion"></div>
                     </div>
                     <div class="mb-3">
                         <label for="inputResultadoAntesDeImpuestos" class="form-label">Resultado antes de impuestos</label>
-                        <input class="form-control" type="text" id="inputResultadoAntesDeImpuestos" name="resultadoAntesDeImpuestos">
+                        <input class="form-control" type="text" id="inputResultadoAntesDeImpuestos" name="resultadoAntesDeImpuestos" maxlength="11">
                         <div class="form-text text-danger" id="controlResultadoAntesDeImpuestos"></div>
                     </div>
                     <button type="submit" class="btn btn-primary my-3" id="botonGuardarDatos">Guardar datos</button>

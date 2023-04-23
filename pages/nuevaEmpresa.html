@@ -25,19 +25,19 @@
     </div>
     <!-- Secciones -->
     <div class="container" id="notificaciones"></div>
-    <div class="container">
-        <section class="row flex-lg-row align-items-center g-5 py-3 d-flex justify-content-center">
+    <div class="container" id="contenedorPrincipal">
+        <section class="row flex-lg-row align-items-center g-5 py-5 mt-5 d-flex justify-content-center">
             <div class="col-lg-4 border border-2 rounded-3">
                 <h2 class="text-center my-3">Añadir empresa</h2>
                 <form action="../php/crearEmpresa.php" method="post" id="formulario">
                     <div class="my-3">
                         <label for="inputCif" class="form-label">CIF</label>
-                        <input type="text" class="form-control" id="inputCif" name="cif">
+                        <input type="text" class="form-control" id="inputCif" name="cif" maxlength="9">
                         <div id="mensajeCif" class="form-text text-danger"></div>
                     </div>
                     <div class="my-3">
                         <label for="inputNombre" class="form-label">Razón social</label>
-                        <input type="text" class="form-control" id="inputNombre" name="razonSocial">
+                        <input type="text" class="form-control" id="inputNombre" name="razonSocial" maxlength="95">
                         <div id="mensajeNombreEmpresa" class="form-text text-danger"></div>
                     </div>
                     <div class="my-3">

@@ -23,3 +23,7 @@
 #informacionPlantilla{
   display: none;
 }
+
+#contenedorPrincipal{
+  min-height: 70vh;
+}
