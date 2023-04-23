@@ -26,6 +26,30 @@ function crearDivConAnalisis(datosDelBalance) {
   let puntuacionGeneral = 0;
 
   /*
+  * Modificar valores en caso de ser 0
+  */
+
+  if (pasivoCorriente == 0) {
+    pasivoCorriente = 0.1;
+  }
+
+  if (facturacion == 0) {
+    facturacion = 0.1;
+  }
+
+  if (activoTotal == 0) {
+    activoTotal = 0.1;
+  }
+
+  if (fondosPropios == 0) {
+    fondosPropios = 0.1;
+  }
+
+  if (patrimonio == 0) {
+    patrimonio = 0.1;
+  }
+
+  /*
   * RATIOS
   */
 
@@ -128,6 +152,10 @@ function crearDivConAnalisis(datosDelBalance) {
   contenedorConDatos.innerHTML += '<hr>';
 
   //ROCE
+  if (activoTotal == 0.1 && pasivoCorriente == 0.1) {
+    pasivoCorriente = 0;
+  }
+
   ROCE = (resultadoAntesDeImpuestos / (activoTotal - pasivoCorriente) * 100).toString().slice(0, 4);
 
   if (ROCE >= 9) {

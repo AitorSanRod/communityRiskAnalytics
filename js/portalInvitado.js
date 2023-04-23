@@ -23,17 +23,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     switch (ratio) {
       case 'liqGeneral':
-        valorRatio = inputPrincipal.value / inputSecundario.value;
-        valorRatio = valorRatio.toString().slice(0, 4);
-        encabezadoPizarra.innerText = `Liquidez general:`;
+        if (inputSecundario.value != 0) {//Revisar si el divisor es 0
+          valorRatio = inputPrincipal.value / inputSecundario.value;
+          valorRatio = valorRatio.toString().slice(0, 4);
+          encabezadoPizarra.innerText = `Liquidez general:`;
 
-        if (valorRatio >= 1 && valorRatio <= 1.8) {
-          pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}</span>`;
-        } else if (valorRatio > 1.8) {
-          pizarraDatos.innerHTML = `<span class="text-warning">${valorRatio}</span>`;
+          if (valorRatio >= 1 && valorRatio <= 1.8) {//Insertar resultados
+            pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}</span>`;
+          } else if (valorRatio > 1.8) {
+            pizarraDatos.innerHTML = `<span class="text-warning">${valorRatio}</span>`;
+          } else {
+            pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}</span>`;
+          }
         } else {
-          pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}</span>`;
+          pizarraDatos.innerHTML = `<span class="text-danger">El valor del pasivo corriente no puede ser 0.</span>`;
         }
+
         break;
       case 'fondManiobra':
         valorRatio = inputPrincipal.value - inputSecundario.value;
@@ -47,15 +52,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         break;
       case 'endeudamiento':
-        valorRatio = inputPrincipal.value / inputSecundario.value * 100;
-        valorRatio = valorRatio.toString().slice(0, 4);
-        encabezadoPizarra.innerText = `Endeudamiento:`;
+        if (inputSecundario.value != 0) {
+          valorRatio = inputPrincipal.value / inputSecundario.value * 100;
+          valorRatio = valorRatio.toString().slice(0, 4);
+          encabezadoPizarra.innerText = `Endeudamiento:`;
 
-        if (valorRatio >= 40 && valorRatio <= 60) {
-          pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}%</span>`;
+          if (valorRatio >= 40 && valorRatio <= 60) {
+            pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}%</span>`;
+          } else {
+            pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}%</span>`;
+          }
         } else {
-          pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}%</span>`;
+          pizarraDatos.innerHTML = `<span class="text-danger">El patrimonio neto no puede ser 0.</span>`;
         }
+
         break;
       default:
         console.error = 'Error en la eleeción.';
