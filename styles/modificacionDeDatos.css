@@ -15,4 +15,14 @@
         display: flex !important;
         justify-content: center !important;
     }
+
+    .datosTarjeta{
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .imagenTarjeta {
+        width: 10rem;
+        height: auto;
+    }
 }

@@ -202,9 +202,9 @@ function tarjetaPequena(urlImagen, titulo, descripcion, idModalQueAbre) {
   tarjeta.setAttribute('data-bs-toggle', 'modal');
 
   contenidoTarjeta.className = 'row';
-  divImg.className = 'col-md-4';
+  divImg.className = 'col-md-4 datosTarjeta';
   imagenTarjeta.src = urlImagen;
-  imagenTarjeta.className = 'img-fluid rounded-start';
+  imagenTarjeta.className = 'img-fluid rounded-start imagenTarjeta';
   imagenTarjeta.alt = 'iconos de la documentación de bootstrap.';
 
   divImg.appendChild(imagenTarjeta);
