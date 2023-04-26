@@ -6,3 +6,10 @@
 #contenidoPrincipal {
     height: 60vh;
 }
+
+
+@media (max-width: 768px) {
+    #contenidoPrincipal {
+        height: 98vh;
+    }
+}
