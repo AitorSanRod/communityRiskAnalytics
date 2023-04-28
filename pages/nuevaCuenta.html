@@ -20,9 +20,9 @@
                 class="d-flex align-items-center mb-3 text-dark text-decoration-none">
                 <img src="http://localhost/communityRiskAnalytics/media/img/logo-icono.png" width="40" height="auto"
                     alt="logo-CRA" class="ms-3">
-                <span class="fs-4 mx-2">Community Risk Analytics</span>
+                <span class="fs-4 mx-2 menuVistaNormal">Community Risk Analytics</span>
             </a>
-            <ul class="nav nav-pills me-3">
+            <ul class="nav nav-pills me-3 menuVistaNormal">
                 <li class="nav-item"><a href="http://localhost/communityRiskAnalytics/" class="nav-link">Portada</a>
                 </li>
                 <li class="nav-item"><a href="http://localhost/communityRiskAnalytics/pages/login.html"
@@ -32,7 +32,27 @@
                 <li class="nav-item"><a href="http://localhost/communityRiskAnalytics/pages/portalInvitado.html"
                         class="nav-link">Portal invitados</a></li>
             </ul>
+            <div id="headerResponsive">
+                <img src="../media/img/hamburguesa-menu.png" alt="Apertura de menú responvise." id="imgMenuResponsive"
+                    data-bs-toggle="offcanvas" data-bs-target="#menuOffCanvas" aria-controls="menuOffCanvas">
+            </div>
         </header>
+    </div>
+    <!-- Off canvas responsive menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="menuOffCanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Community Risk Analytics</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column">
+                <a href="http://localhost/communityRiskAnalytics/" class="btn btn-primary my-2">Portada</a>
+                <a href="http://localhost/communityRiskAnalytics/pages/login.html" class="btn btn-primary my-2">Entrar</a>
+                <a href="http://localhost/communityRiskAnalytics/pages/nuevaCuenta.html" class="btn btn-primary my-2">Crear cuenta</a>
+                <a href="http://localhost/communityRiskAnalytics/pages/portalInvitado.html" class="btn btn-outline-primary my-2">Portal
+                    invitados</a>
+            </div>
+        </div>
     </div>
     <!-- Cuerpo -->
     <div class="container" id="notificaciones"></div>

@@ -2,3 +2,29 @@
     margin: 0;
     padding: 0;
 }
+
+#headerResponsive {
+    display: none;
+}
+
+#imgMenuResponsive {
+    height: 4rem;
+    width: auto;
+}
+
+#imgMenuResponsive:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #headerResponsive {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 3px;
+    }
+
+    .menuVistaNormal {
+        display: none !important;
+    }
+}

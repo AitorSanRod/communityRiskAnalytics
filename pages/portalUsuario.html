@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
         type="image/x-icon">
     <title>CRA | Portal de usuario</title>
 </head>
+
 <body>
     <!-- Cabecera -->
     <div class="container-fluid">
@@ -20,15 +22,31 @@
                 class="d-flex align-items-center mb-3 text-dark text-decoration-none">
                 <img src="http://localhost/communityRiskAnalytics/media/img/logo-icono.png" width="40" height="auto"
                     alt="logo-CRA" class="ms-3">
-                <span class="fs-4 mx-2">Community Risk Analytics</span>
+                <span class="fs-4 mx-2 menuVistaNormal">Community Risk Analytics</span>
             </a>
-            <ul class="nav nav-pills me-3">
+            <ul class="nav nav-pills me-3 menuVistaNormal">
                 <li class="nav-item"><a href="http://localhost/communityRiskAnalytics/" class="nav-link">Portada</a>
                 </li>
-                <li class="nav-item"><a href="#"
-                        class="nav-link text-danger" id="enlaceSalir">Salir</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-danger" id="enlaceSalir">Salir</a></li>
             </ul>
+            <div id="headerResponsive">
+                <img src="../media/img/hamburguesa-menu.png" alt="Apertura de menú responvise." id="imgMenuResponsive"
+                    data-bs-toggle="offcanvas" data-bs-target="#menuOffCanvas" aria-controls="menuOffCanvas">
+            </div>
         </header>
+    </div>
+    <!-- Off canvas responsive menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="menuOffCanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Community Risk Analytics</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column">
+                <a href="http://localhost/communityRiskAnalytics/" class="btn btn-primary my-2">Portada</a>
+                <a href="#" class="btn btn-danger my-2" id="enlaceSalir">Salir</a>
+            </div>
+        </div>
     </div>
     <!-- Secciones -->
     <div class="container" id="contenedorPrincipal">
@@ -43,11 +61,15 @@
                     class="btn btn-primary w-100 my-1" id="nuevaEmpresa" role="button">Añadir empresa</a>
                 <a href="http://localhost/communityRiskAnalytics/pages/nuevoEstado.html"
                     class="btn btn-primary w-100 my-1 disabled" id="nuevoEstado" role="button">Añadir balances</a>
-                <a href="http://localhost/communityRiskAnalytics/pages/modificarDatosUsuario.html" class="btn btn-primary w-100 my-1" role="button" id="modificarDatosCuenta">Modificar datos del usuario</a>
+                <a href="http://localhost/communityRiskAnalytics/pages/modificarDatosUsuario.html"
+                    class="btn btn-primary w-100 my-1" role="button" id="modificarDatosCuenta">Modificar datos del
+                    usuario</a>
                 <div class="my-3 align-self-end">
                     <hr>
-                    <button class="btn btn-outline-danger w-100 my-1" id="elminarCuenta" data-bs-toggle="modal" data-bs-target="#modalEliminarEmpresa">Eliminar empresa</button>
-                    <button class="btn btn-outline-danger w-100 my-1" id="elminarCuenta" data-bs-toggle="modal" data-bs-target="#modalEliminarCuenta">Eliminar cuenta</button>
+                    <button class="btn btn-outline-danger w-100 my-1" id="elminarCuenta" data-bs-toggle="modal"
+                        data-bs-target="#modalEliminarEmpresa">Eliminar empresa</button>
+                    <button class="btn btn-outline-danger w-100 my-1" id="elminarCuenta" data-bs-toggle="modal"
+                        data-bs-target="#modalEliminarCuenta">Eliminar cuenta</button>
                     <hr>
                     <button class="btn btn-danger w-100 my-1" id="cerrarSesion">Cerrar sesión</button>
                 </div>
@@ -83,7 +105,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <b>El borrado de la empresa es irreversible.</b> Se eliminarán los datos de su empresa 
+                    <b>El borrado de la empresa es irreversible.</b> Se eliminarán los datos de su empresa
                     y no podrá recuperarlos, tendrá que volver a añadirlos.
                 </div>
                 <div class="modal-footer">
@@ -114,4 +136,5 @@
     <script src="../js/portalUsuario.js"></script>
     <script src="../resources/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
 </body>
+
 </html>
