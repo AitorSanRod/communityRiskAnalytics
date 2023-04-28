@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-  formulario.addEventListener('submit', function (evento) {//Comprobar datos
+  formulario.addEventListener('submit', iniciarSesion); //Comprobar datos
+
+
+  function iniciarSesion(evento) {
     datosFormulario = new FormData(formulario);
 
     evento.preventDefault();
@@ -32,5 +35,5 @@ document.addEventListener('DOMContentLoaded', function () {
           }, 5000);
         }
       })
-  });
-});
+  }
+}); 
