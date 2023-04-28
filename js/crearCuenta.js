@@ -182,13 +182,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  formulario.addEventListener('submit', validaciones);
+  formulario.addEventListener('submit', crearNuevoUsuario);
 
   /*
   * FUNCIONES
   */
 
-  function validaciones(evento) {
+  function crearNuevoUsuario(evento) {
     evento.preventDefault();
 
     let datosFormulario = new FormData(formulario);//Crea un objeto con los valores del atributo name
