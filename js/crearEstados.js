@@ -205,8 +205,6 @@ document.addEventListener('DOMContentLoaded', function () {
   */
   tipoDeSubida.addEventListener('change', function () {// Mostrar unos datos u otros en función de elección
 
-    //Hay que hacer que el formulario se vacie cuando se cambia
-
     if (tipoDeSubida.value == 'manual') { //Mostrar formulario
       formularioManual.style.display = 'block';
       datosExcel.style.display = 'none';
