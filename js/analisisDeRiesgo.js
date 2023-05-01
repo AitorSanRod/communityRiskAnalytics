@@ -24,6 +24,7 @@ function crearDivConAnalisis(datosDelBalance) {
   let endeudamiento;
   let ROCE;
   let puntuacionGeneral = 0;
+  let operacionPrevia;
 
   /*
   * Modificar valores en caso de ser 0
@@ -152,11 +153,13 @@ function crearDivConAnalisis(datosDelBalance) {
   contenedorConDatos.innerHTML += '<hr>';
 
   //ROCE
-  if (activoTotal == 0.1 && pasivoCorriente == 0.1) {
-    pasivoCorriente = 0;
+  operacionPrevia = activoTotal - pasivoCorriente;
+
+  if (operacionPrevia == 0) {
+    operacionPrevia = 0.1;
   }
 
-  ROCE = (resultadoAntesDeImpuestos / (activoTotal - pasivoCorriente) * 100).toString().slice(0, 4);
+  ROCE = (resultadoAntesDeImpuestos / operacionPrevia * 100).toString().slice(0, 4);
 
   if (ROCE >= 9) {
     contenedorConDatos.innerHTML += `ROCE: <span class="text-success fw-bold">${ROCE}%</span>`;
