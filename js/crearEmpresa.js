@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /*
   * Submit
   */
-  formulario.addEventListener('submit', function crearCuenta(evento) {
+  formulario.addEventListener('submit', function crearEmpresa(evento) {
     evento.preventDefault();
 
     datosFormulario = new FormData(formulario);

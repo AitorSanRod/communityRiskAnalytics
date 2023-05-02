@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
           });
 
         //Este listener desencadena el borrado de todos los datos del usuario
-        botonEliminarCuenta.addEventListener('click', function () {
+        botonEliminarCuenta.addEventListener('click', function eliminarCuenta() {
           fetch(URLBORRARCUENTA)
             .then(respuesta => respuesta.json())
             .then(estado => {
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(() => console.log('Error en base de datos.'));
         });
 
-        botonEliminarEmpresa.addEventListener('click', function () {
+        botonEliminarEmpresa.addEventListener('click', function eliminarEmpresa() {
           fetch(URLBORRAREMPRESA)
             .then(respuesta => respuesta.json())
             .then(estado => {

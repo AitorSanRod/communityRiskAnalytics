@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded', function () {
   * Una vez se autentica la plantilla se valida el dato.
   * Despues se recopilan los datos en el formulario manual que queda oculto.
   */
-  archivoExcel.addEventListener('change', function () {
+  archivoExcel.addEventListener('change', function leerExcel() {
     let valor;
 
     try {
@@ -742,7 +742,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /*
   * Envío de datos
   */
-  formularioManual.addEventListener('submit', function (evento) {//Submit
+  formularioManual.addEventListener('submit', function crearEstadoConFormulario(evento) {//Submit
     let datosFormulario;
 
     evento.preventDefault();
@@ -785,7 +785,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  botonEnvioDatosConExcel.addEventListener('click', function () {//Envio sin submit
+  botonEnvioDatosConExcel.addEventListener('click', function crearEstadosConExcel() {//Envio sin submit
     let datosFormulario;
 
     //Por tener esta parte del código algo mas ordenada y entendible, hago varios if, pero podrían estar en una línea.

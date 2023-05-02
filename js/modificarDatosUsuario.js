@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   */
 
   //Controladores del click al guardar cambios
-  formularioNombreUsuario.addEventListener('submit', function (evento) {//Nombre del usuario
+  formularioNombreUsuario.addEventListener('submit', function modificarNombreDeUsuario(evento) {//Nombre del usuario
     let datoNuevoNombre = new FormData(formularioNombreUsuario);
 
     evento.preventDefault();
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  formularioEmpresa.addEventListener('submit', function (evento) {//Datos empresa
+  formularioEmpresa.addEventListener('submit', function modificarDatosDeEmpresa(evento) {//Datos empresa
     let datosFormulario = new FormData(formularioEmpresa);
 
     evento.preventDefault();
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  formularioCambioContrasena.addEventListener('submit', function (evento) {//Contraseña
+  formularioCambioContrasena.addEventListener('submit', function modificarContrasena(evento) {//Contraseña
     let datosFormulario = new FormData(formularioCambioContrasena);
 
     evento.preventDefault();
