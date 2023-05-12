@@ -175,8 +175,6 @@ function validarNombreEmpresa(razonSocial) {
 function validarNumero(valor) {
   let numeroCorrecto = true;
 
-  console.log(valor)
-
   if (!buscarEnCadena(valor.toString(), NUMEROS)) {
     numeroCorrecto = false;
   }

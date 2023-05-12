@@ -23,21 +23,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     switch (ratio) {
       case 'liqGeneral':
-        if (inputSecundario.value != 0) {//Revisar si el divisor es 0
-          valorRatio = inputPrincipal.value / inputSecundario.value;
-          valorRatio = valorRatio.toString().slice(0, 4);
-          encabezadoPizarra.innerText = `Liquidez general:`;
+        encabezadoPizarra.innerText = `Liquidez general:`;
 
-          if (valorRatio >= 1 && valorRatio <= 1.8) {//Insertar resultados
-            pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}</span>`;
-          } else if (valorRatio > 1.8) {
-            pizarraDatos.innerHTML = `<span class="text-warning">${valorRatio}</span>`;
+        if (validarNumero(inputPrincipal.value) && validarNumero(inputSecundario.value)) {
+          if (inputSecundario.value != 0) {//Revisar si el divisor es 0
+            valorRatio = inputPrincipal.value / inputSecundario.value;
+            valorRatio = valorRatio.toString().slice(0, 4);
+
+            if (valorRatio >= 1 && valorRatio <= 1.8) {//Insertar resultados
+              pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}</span>`;
+            } else if (valorRatio > 1.8) {
+              pizarraDatos.innerHTML = `<span class="text-warning">${valorRatio}</span>`;
+            } else {
+              pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}</span>`;
+            }
           } else {
-            pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}</span>`;
+            pizarraDatos.innerHTML = `<span class="text-danger">El valor del pasivo corriente no puede ser 0.</span>`;
           }
         } else {
-          pizarraDatos.innerHTML = `<span class="text-danger">El valor del pasivo corriente no puede ser 0.</span>`;
+          pizarraDatos.innerHTML = `<span class="text-danger">Solo deben usarse números.</span>`;
         }
+
 
         break;
       case 'fondManiobra':
@@ -45,26 +51,36 @@ document.addEventListener('DOMContentLoaded', function () {
         valorRatio = valorRatio.toString().slice(0, 4);
         encabezadoPizarra.innerText = `Fondo de maniobra:`;
 
-        if (valorRatio > 0) {
-          pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}</span>`;
+        if (validarNumero(inputPrincipal.value) && validarNumero(inputSecundario.value)) {
+          if (valorRatio > 0) {
+            pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}</span>`;
+          } else {
+            pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}</span>`;
+          }
         } else {
-          pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}</span>`;
+          pizarraDatos.innerHTML = `<span class="text-danger">Solo deben usarse números.</span>`;
         }
         break;
       case 'endeudamiento':
         if (inputSecundario.value != 0) {
-          valorRatio = inputPrincipal.value / inputSecundario.value * 100;
-          valorRatio = valorRatio.toString().slice(0, 4);
           encabezadoPizarra.innerText = `Endeudamiento:`;
 
-          if (valorRatio >= 40 && valorRatio <= 60) {
-            pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}%</span>`;
+          if (validarNumero(inputPrincipal.value) && validarNumero(inputSecundario.value)) {
+            valorRatio = inputPrincipal.value / inputSecundario.value * 100;
+            valorRatio = valorRatio.toString().slice(0, 4);
+
+            if (valorRatio >= 40 && valorRatio <= 60) {
+              pizarraDatos.innerHTML = `<span class="text-success">${valorRatio}%</span>`;
+            } else {
+              pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}%</span>`;
+            }
           } else {
-            pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}%</span>`;
+            pizarraDatos.innerHTML = `<span class="text-danger">Solo deben usarse números.</span>`;
           }
         } else {
-          pizarraDatos.innerHTML = `<span class="text-danger">El patrimonio neto no puede ser 0.</span>`;
+          pizarraDatos.innerHTML = `<span class="text-danger">El patrimonio neto no es válido.</span>`;
         }
+
 
         break;
       default:
