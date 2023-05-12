@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let botonCalculo = document.getElementById('calcular');
 
   selectorRatio.addEventListener('change', function () {
+    inputPrincipal.value = '';
+    inputSecundario.value= '';
     montarFormulario();
   });
 
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             pizarraDatos.innerHTML = `<span class="text-danger">El valor del pasivo corriente no puede ser 0.</span>`;
           }
         } else {
-          pizarraDatos.innerHTML = `<span class="text-danger">Solo deben usarse números.</span>`;
+          pizarraDatos.innerHTML = `<span class="text-danger">Datos no válidos.</span>`;
         }
 
 
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}</span>`;
           }
         } else {
-          pizarraDatos.innerHTML = `<span class="text-danger">Solo deben usarse números.</span>`;
+          pizarraDatos.innerHTML = `<span class="text-danger">Datos no válidos.</span>`;
         }
         break;
       case 'endeudamiento':
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
               pizarraDatos.innerHTML = `<span class="text-danger">${valorRatio}%</span>`;
             }
           } else {
-            pizarraDatos.innerHTML = `<span class="text-danger">Solo deben usarse números.</span>`;
+            pizarraDatos.innerHTML = `<span class="text-danger">Datos no válidos..</span>`;
           }
         } else {
           pizarraDatos.innerHTML = `<span class="text-danger">El patrimonio neto no es válido.</span>`;
